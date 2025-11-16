@@ -2,10 +2,10 @@
 
 npm install
 
-**build once:**
+build once:
 npm run build
 
-**rebuild on change:**
+rebuild on change:
 npm run watch
 
 check merged.ts
