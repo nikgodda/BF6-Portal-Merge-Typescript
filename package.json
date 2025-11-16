@@ -1,0 +1,12 @@
+{
+  "name": "ts-merge-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/merge-ts-preserve-types.mjs",
+    "watch": "chokidar \"src/**/*.ts\" -c \"npm run build\""
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
