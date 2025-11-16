@@ -1,4 +1,5 @@
 export abstract class BasePlayer {
+
     public player: mod.Player
     public playerId: number
 
@@ -7,6 +8,7 @@ export abstract class BasePlayer {
     public teamKills: number = 0
 
     constructor(player: mod.Player) {
+
         this.player = player
         this.playerId = mod.GetObjId(player)
     }
@@ -14,22 +16,17 @@ export abstract class BasePlayer {
     abstract makeMove(): void
 
     addKill() {
+
         this.kills += 1
     }
 
     addDeath() {
+
         this.deaths += 1
     }
 
     addTeamKill() {
-        this.teamKills += 1
-    }
 
-    getStats() {
-        return {
-            kills: this.kills,
-            deaths: this.deaths,
-            teamKills: this.teamKills
-        }
+        this.teamKills += 1
     }
 }
