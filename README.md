@@ -1,9 +1,11 @@
-# BF6-Portal-Merge-Typescript
+# BF6 Portal Merge Typescript
 
 npm install
 
-Build once: 
+**build once:**
+
 npm run build
 
-Rebuild on change:
+**rebuild on change:**
+
 npm run watch
