@@ -1,6 +1,6 @@
 import * as modlib from 'modlib'
 
-// -------- FILE: src\Player\APlayerBase.ts --------
+// -------- FILE: src\Example\Player\APlayerBase.ts --------
 abstract class APlayerBase {
 
     playerId: number
@@ -32,7 +32,7 @@ abstract class APlayerBase {
 }
 
 
-// -------- FILE: src\Player\PlayerHuman.ts --------
+// -------- FILE: src\Example\Player\PlayerHuman.ts --------
 class PlayerHuman extends APlayerBase {
 
     makeMove() {
@@ -41,7 +41,7 @@ class PlayerHuman extends APlayerBase {
     }
 }
 
-// -------- FILE: src\Player\PlayerAI.ts --------
+// -------- FILE: src\Example\Player\PlayerAI.ts --------
 class PlayerAI extends APlayerBase {
 
     makeMove() {
@@ -50,7 +50,7 @@ class PlayerAI extends APlayerBase {
     }
 }
 
-// -------- FILE: src\PlayerManager.ts --------
+// -------- FILE: src\Example\PlayerManager.ts --------
 class PlayerManager {
     private players: Map<number, APlayerBase> = new Map()
 

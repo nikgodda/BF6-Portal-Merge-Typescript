@@ -1,6 +1,6 @@
 import * as modlib from 'modlib'
 
-import { PlayerManager } from './PlayerManager'
+import { PlayerManager } from './Example/PlayerManager'
 
 const playerManager = new PlayerManager()
 
@@ -16,7 +16,7 @@ export async function OnGameModeStarted() {
 export function OnPlayerJoinGame(eventPlayer: mod.Player): void {
     const player = playerManager.createPlayer(eventPlayer)
 
-    console.log('PLAYER JOINED. ID: ', player.playerId)
+    console.log('PLAYER JOINED with ID ', player.playerId)
 }
 
 // Triggered when player selects their class and deploys into game. Useful for any spawn/start logic.
