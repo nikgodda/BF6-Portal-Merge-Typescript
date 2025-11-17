@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as modlib from 'modlib'
 
 // -------- FILE: src\BasePlayer.ts --------
