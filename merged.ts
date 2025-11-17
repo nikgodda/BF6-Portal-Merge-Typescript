@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as modlib from 'modlib'
 
-// -------- FILE: src/BasePlayer.ts --------
+// -------- FILE: src\BasePlayer.ts --------
 abstract class BasePlayer {
 
     playerId: number
@@ -33,7 +33,7 @@ abstract class BasePlayer {
 }
 
 
-// -------- FILE: src/HumanPlayer.ts --------
+// -------- FILE: src\HumanPlayer.ts --------
 class HumanPlayer extends BasePlayer {
 
     makeMove() {
@@ -42,7 +42,7 @@ class HumanPlayer extends BasePlayer {
     }
 }
 
-// -------- FILE: src/AiPlayer.ts --------
+// -------- FILE: src\AiPlayer.ts --------
 class AiPlayer extends BasePlayer {
 
     makeMove() {
@@ -51,7 +51,7 @@ class AiPlayer extends BasePlayer {
     }
 }
 
-// -------- FILE: src/PlayerManager.ts --------
+// -------- FILE: src\PlayerManager.ts --------
 class PlayerManager {
     private players: Map<number, BasePlayer> = new Map()
 
@@ -71,7 +71,7 @@ class PlayerManager {
     }
 }
 
-// -------- FILE: src/main.ts --------
+// -------- FILE: src\main.ts --------
 
 const playerManager = new PlayerManager()
 
@@ -79,6 +79,9 @@ const playerManager = new PlayerManager()
 export async function OnGameModeStarted() {
 
     console.log(Date.now())
+
+    // modlib test
+    modlib.ParseUI()
 }
 
 // Triggered when player joins the game. Useful for pregame setup, team management, etc.

@@ -1,3 +1,5 @@
+import * as modlib from 'modlib'
+
 import { PlayerManager } from "./PlayerManager"
 
 const playerManager = new PlayerManager()
@@ -6,6 +8,9 @@ const playerManager = new PlayerManager()
 export async function OnGameModeStarted() {
 
     console.log(Date.now())
+
+    // modlib test
+    modlib.ParseUI()
 }
 
 // Triggered when player joins the game. Useful for pregame setup, team management, etc.

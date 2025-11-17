@@ -6,13 +6,15 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "modlib": ["./code/modlib"]
+    }
   },
   "include": [
     "src/**/*",
     "merged.ts",
-    "code/mod/**/*",
-    "code/modlib/**/*"
+    "code/mod/**/*"
   ],
   "exclude": [
     "node_modules"
