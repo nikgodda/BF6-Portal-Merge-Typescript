@@ -88,7 +88,7 @@ export function OnPlayerJoinGame(eventPlayer: mod.Player): void {
 
     const jsPlayer = playerManager.createPlayer(eventPlayer)
 
-    console.log(jsPlayer.playerId)
+    console.log('PLAYER JOINED. ID: ', jsPlayer.playerId)
 
 }
 
