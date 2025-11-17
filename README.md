@@ -4,13 +4,13 @@
 
 - ```npm install```
 
-- create and use some classes
+- create and use some classes in /src folder
 
-- ```npm run build```
+- ```npm run build``` or ```npm run watch```
 
 - Copy ```merged.ts``` entire content and paste into Portal web interface
 
-- Done
+- Test your great mod
 
 ## COMMANDS ##
 
