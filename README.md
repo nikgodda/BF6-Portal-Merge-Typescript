@@ -13,5 +13,7 @@ npm run watch
 merged.ts
 
 ### NOTES
-- /code folder contains mod and modlib from official SDK. keep it updated if necessary
+- /sripts contains merge script
+- /code contains mod and modlib from official SDK. keep it updated if necessary
+- /src main.ts - entry point
 - ```import * as modlib from 'modlib'``` to use modlib in classes or main.ts
