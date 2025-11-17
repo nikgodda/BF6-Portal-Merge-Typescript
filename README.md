@@ -1,21 +1,33 @@
 # BF6 Portal Merge Typescript
 
-## install
+## HOW TO USE ##
+
+- ```npm install```
+
+- create and use some classes
+
+- ```npm run build```
+
+- Copy ```merged.ts``` entire content and paste into Portal web interface
+
+- Done
+
+## COMMANDS ##
+
+## Install
 ```npm install```
 
-## build once
+## Build merged.ts
 ```npm run build```
 
-## rebuild on change
+## Rebuild merged.ts on files change
 ```npm run watch```
 
-## update /mod/index.d.ts and /modlib/index.ts
+## Update /code/mod/index.d.ts and /code/modlib/index.ts
 ```npm run update-sdk```
 
-## output file
-merged.ts
-
 ## NOTES ##
+
 ### /code ###
 - Contains Official Portal SDK ```/mod/index.d.ts``` and ```/modlib/index.ts``` files provided by [Battlefield Portal Community](https://github.com/battlefield-portal-community/OfficailPortalSDK)  
 - Files are updated automatically on ```npm install```  
@@ -25,11 +37,11 @@ merged.ts
 ### /sripts ### 
 - Merge script  
 
-- Script to update mod and modlib files in /code folder 
+- Script to update SDK files in /code folder 
 
 ### /src ### 
-- Entry point file ```main.ts``` should contain mod events
+- Entry point file ```main.ts``` should contain SDK events
 
-- Example folder
+- Example
 
 - ```import * as modlib from 'modlib'``` to use modlib in classes or main.ts
