@@ -14,16 +14,16 @@
 
 ## COMMANDS ##
 
-## Install
+### Install
 ```npm install```
 
-## Build merged.ts
+### Build merged.ts
 ```npm run build```
 
-## Rebuild merged.ts on files change
+### Rebuild merged.ts on files change
 ```npm run watch```
 
-## Update /code/mod/index.d.ts and /code/modlib/index.ts
+### Update /code/mod/index.d.ts and /code/modlib/index.ts
 ```npm run update-sdk```
 
 ## NOTES ##
