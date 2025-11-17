@@ -1,15 +1,12 @@
 export abstract class BasePlayer {
 
-    public player: mod.Player
-    public playerId: number
+    playerId: number
 
-    public kills: number = 0
-    public deaths: number = 0
-    public teamKills: number = 0
+    kills: number = 0
+    deaths: number = 0
+    teamKills: number = 0
 
     constructor(player: mod.Player) {
-
-        this.player = player
         this.playerId = mod.GetObjId(player)
     }
 
