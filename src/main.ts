@@ -23,7 +23,7 @@ export function OnPlayerDeployed(eventPlayer: mod.Player): void {
     const jsPlayer = playerManager.getPlayer(mod.GetObjId(eventPlayer))
 
     if (jsPlayer)
-        mod.DisplayHighlightedWorldLogMessage(mod.Message(jsPlayer.player))
+        mod.DisplayHighlightedWorldLogMessage(mod.Message(jsPlayer.playerId))
 
 }
 
