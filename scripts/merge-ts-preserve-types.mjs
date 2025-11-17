@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-// Fix __dirname in ES module
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
@@ -25,8 +24,7 @@ function resolveFile(filePath) {
   let match
 
   while ((match = importRegex.exec(code))) {
-    const importPath = match[1]
-    const resolved = resolveImport(filePath, importPath)
+    const resolved = resolveImport(filePath, match[1])
     if (resolved) resolveFile(resolved)
   }
 
@@ -58,30 +56,28 @@ function merge(entryFile) {
 
   let output = ''
 
+  // Prepend import * as modlib
+  output += `import * as modlib from 'modlib'\n`
+
   for (const file of ordered) {
     let code = fs.readFileSync(file, 'utf8')
 
-    // ===== Remove import statements (semicolon optional) =====
+    // Remove all import statements (semicolon optional)
     code = code.replace(/^\s*import\s.+from\s+['"].+['"]\s*;?\s*$/gm, '')
 
-    // ===== Remove export keyword from classes, interfaces, types, enums, variables =====
+    // Remove export from classes, interfaces, types, enums, const/let/var (keep abstract)
     code = code.replace(
       /^\s*export\s+(abstract\s+)?(class|interface|type|enum|const|let|var)\b/gm,
       '$1$2'
     )
 
-    // ===== Remove named exports like: export { something } =====
+    // Remove named exports like: export { something }
     code = code.replace(/\bexport\s*{[^}]*}\s*;?\s*$/gm, '')
 
-    // ===== Remove default exports =====
+    // Remove default exports
     code = code.replace(/\bexport\s+default\s+/gm, '')
 
-    // Exported functions (export function ...) remain intact
-
-    output += `\n// -------- FILE: ${path.relative(
-      process.cwd(),
-      file
-    )} --------\n`
+    output += `\n// -------- FILE: ${path.relative(process.cwd(), file)} --------\n`
     output += code + '\n'
   }
 
@@ -90,5 +86,5 @@ function merge(entryFile) {
   console.log(`✅ merged.ts generated at ${outputPath}`)
 }
 
-// ======= ENTRY POINT =======
+// Entry point
 merge(path.resolve(__dirname, '../src/main.ts'))
