@@ -6,7 +6,7 @@
 
 - create and use some classes
 
-- ```npm run build```
+- ```npm run build``` or ```npm run watch```
 
 - Copy ```merged.ts``` entire content and paste into Portal web interface
 
