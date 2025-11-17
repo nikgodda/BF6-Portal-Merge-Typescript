@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/merge-ts-preserve-types.mjs",
-    "watch": "chokidar \"src/**/*.ts\" -c \"npm run build\""
+    "watch": "chokidar \"src/**/*.ts\" -c \"npm run build\"",
+    "update-sdk": "node scripts/update-sdk.mjs",
+    "prepare": "npm run update-sdk"
   },
   "devDependencies": {
     "chokidar-cli": "^3.0.0"
