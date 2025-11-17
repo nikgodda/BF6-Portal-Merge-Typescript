@@ -4,7 +4,7 @@
 
 - ```npm install```
 
-- create and use some classes
+- create and use some classes in /src folder
 
 - ```npm run build``` or ```npm run watch```
 
