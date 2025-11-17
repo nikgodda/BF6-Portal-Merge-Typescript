@@ -57,7 +57,7 @@ function merge(entryFile) {
   let output = ''
 
   // Prepend import * as modlib
-  output += `import * as modlib from 'modlib'\n`
+  output += `// @ts-ignore\nimport * as modlib from 'modlib'\n`
 
   for (const file of ordered) {
     let code = fs.readFileSync(file, 'utf8')
