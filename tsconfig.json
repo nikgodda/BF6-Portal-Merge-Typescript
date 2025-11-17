@@ -11,7 +11,8 @@
   "include": [
     "src/**/*",
     "merged.ts",
-    "mod/**/*"
+    "code/mod/**/*",
+    "code/modlib/**/*"
   ],
   "exclude": [
     "node_modules"
