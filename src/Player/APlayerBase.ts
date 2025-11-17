@@ -1,4 +1,4 @@
-export abstract class ABasePlayer {
+export abstract class APlayerBase {
 
     playerId: number
 

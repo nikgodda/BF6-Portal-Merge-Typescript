@@ -1,27 +1,27 @@
-import { ABasePlayer } from './Player/ABasePlayer'
-import { HumanPlayer } from './Player/HumanPlayer'
-import { AiPlayer } from './Player/AiPlayer'
+import { APlayerBase } from './Player/APlayerBase'
+import { PlayerHuman } from './Player/PlayerHuman'
+import { PlayerAI } from './Player/PlayerAI'
 
 export class PlayerManager {
-    private players: Map<number, ABasePlayer> = new Map()
+    private players: Map<number, APlayerBase> = new Map()
 
-    createPlayer(player: mod.Player): ABasePlayer {
-        const basePlayer: ABasePlayer = mod.GetSoldierState(
+    createPlayer(player: mod.Player): APlayerBase {
+        const basePlayer: APlayerBase = mod.GetSoldierState(
             player,
             mod.SoldierStateBool.IsAISoldier
         )
-            ? new HumanPlayer(player)
-            : new AiPlayer(player)
+            ? new PlayerHuman(player)
+            : new PlayerAI(player)
 
         this.players.set(basePlayer.playerId, basePlayer)
         return basePlayer
     }
 
-    getPlayer(playerId: number): ABasePlayer | undefined {
+    getPlayer(playerId: number): APlayerBase | undefined {
         return this.players.get(playerId)
     }
 
-    getAllPlayers(): ABasePlayer[] {
+    getAllPlayers(): APlayerBase[] {
         return Array.from(this.players.values())
     }
 }

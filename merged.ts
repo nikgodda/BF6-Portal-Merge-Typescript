@@ -1,7 +1,7 @@
 import * as modlib from 'modlib'
 
-// -------- FILE: src\Player\ABasePlayer.ts --------
-abstract class ABasePlayer {
+// -------- FILE: src\Player\APlayerBase.ts --------
+abstract class APlayerBase {
 
     playerId: number
 
@@ -32,8 +32,8 @@ abstract class ABasePlayer {
 }
 
 
-// -------- FILE: src\Player\HumanPlayer.ts --------
-class HumanPlayer extends ABasePlayer {
+// -------- FILE: src\Player\PlayerHuman.ts --------
+class PlayerHuman extends APlayerBase {
 
     makeMove() {
         
@@ -41,8 +41,8 @@ class HumanPlayer extends ABasePlayer {
     }
 }
 
-// -------- FILE: src\Player\AiPlayer.ts --------
-class AiPlayer extends ABasePlayer {
+// -------- FILE: src\Player\PlayerAI.ts --------
+class PlayerAI extends APlayerBase {
 
     makeMove() {
         
@@ -52,25 +52,25 @@ class AiPlayer extends ABasePlayer {
 
 // -------- FILE: src\PlayerManager.ts --------
 class PlayerManager {
-    private players: Map<number, ABasePlayer> = new Map()
+    private players: Map<number, APlayerBase> = new Map()
 
-    createPlayer(player: mod.Player): ABasePlayer {
-        const basePlayer: ABasePlayer = mod.GetSoldierState(
+    createPlayer(player: mod.Player): APlayerBase {
+        const basePlayer: APlayerBase = mod.GetSoldierState(
             player,
             mod.SoldierStateBool.IsAISoldier
         )
-            ? new HumanPlayer(player)
-            : new AiPlayer(player)
+            ? new PlayerHuman(player)
+            : new PlayerAI(player)
 
         this.players.set(basePlayer.playerId, basePlayer)
         return basePlayer
     }
 
-    getPlayer(playerId: number): ABasePlayer | undefined {
+    getPlayer(playerId: number): APlayerBase | undefined {
         return this.players.get(playerId)
     }
 
-    getAllPlayers(): ABasePlayer[] {
+    getAllPlayers(): APlayerBase[] {
         return Array.from(this.players.values())
     }
 }
@@ -90,17 +90,17 @@ export async function OnGameModeStarted() {
 
 // Triggered when player joins the game. Useful for pregame setup, team management, etc.
 export function OnPlayerJoinGame(eventPlayer: mod.Player): void {
-    const jsPlayer = playerManager.createPlayer(eventPlayer)
+    const player = playerManager.createPlayer(eventPlayer)
 
-    console.log('PLAYER JOINED. ID: ', jsPlayer.playerId)
+    console.log('PLAYER JOINED. ID: ', player.playerId)
 }
 
 // Triggered when player selects their class and deploys into game. Useful for any spawn/start logic.
 export function OnPlayerDeployed(eventPlayer: mod.Player): void {
-    const jsPlayer = playerManager.getPlayer(mod.GetObjId(eventPlayer))
+    const player = playerManager.getPlayer(mod.GetObjId(eventPlayer))
 
-    if (jsPlayer)
-        mod.DisplayHighlightedWorldLogMessage(mod.Message(jsPlayer.playerId))
+    if (player)
+        mod.DisplayHighlightedWorldLogMessage(mod.Message(player.playerId))
 }
 
 // Triggered when a player is damaged, returns same variables as OnPlayerDied. Useful for custom on damage logic and updating custom UI.
