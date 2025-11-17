@@ -2,7 +2,6 @@ import * as modlib from 'modlib'
 
 // -------- FILE: src\Example\Player\APlayerBase.ts --------
 abstract class APlayerBase {
-
     playerId: number
 
     kills: number = 0
@@ -16,17 +15,14 @@ abstract class APlayerBase {
     abstract makeMove(): void
 
     addKill() {
-
         this.kills += 1
     }
 
     addDeath() {
-
         this.deaths += 1
     }
 
     addTeamKill() {
-
         this.teamKills += 1
     }
 }
@@ -34,21 +30,22 @@ abstract class APlayerBase {
 
 // -------- FILE: src\Example\Player\PlayerHuman.ts --------
 class PlayerHuman extends APlayerBase {
-
     makeMove() {
-        
         console.log(`(human) is making a move`)
     }
 }
 
+
 // -------- FILE: src\Example\Player\PlayerAI.ts --------
 class PlayerAI extends APlayerBase {
-
     makeMove() {
-        
         console.log(`(AI) is making a move`)
+
+        // modlib test
+        modlib.ParseUI()
     }
 }
+
 
 // -------- FILE: src\Example\PlayerManager.ts --------
 class PlayerManager {

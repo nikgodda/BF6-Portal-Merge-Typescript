@@ -1,5 +1,4 @@
 export abstract class APlayerBase {
-
     playerId: number
 
     kills: number = 0
@@ -13,17 +12,14 @@ export abstract class APlayerBase {
     abstract makeMove(): void
 
     addKill() {
-
         this.kills += 1
     }
 
     addDeath() {
-
         this.deaths += 1
     }
 
     addTeamKill() {
-
         this.teamKills += 1
     }
 }
