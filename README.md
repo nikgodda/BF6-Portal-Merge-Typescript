@@ -34,7 +34,7 @@
 
 - To update manually use ```npm run update-sdk```
 
-### /sripts ### 
+### /scripts ### 
 - Merge script  
 
 - Script to update SDK files in /code folder 
