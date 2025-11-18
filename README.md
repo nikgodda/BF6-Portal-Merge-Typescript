@@ -44,4 +44,4 @@
 
 - Example classes
 
-- ```import * as modlib from 'modlib'``` to use modlib in classes or main.ts
+- use ```import * as modlib from 'modlib'``` to use modlib in classes or main.ts
