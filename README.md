@@ -10,7 +10,7 @@
 
 - Copy ```merged.ts``` entire content and paste into Portal web interface
 
-- Test your great mod
+- Test your great mod!
 
 ## COMMANDS ##
 
