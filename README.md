@@ -4,7 +4,7 @@
 
 - ```npm install```
 
-- in /src folder add engine events (for ex. OnGameModeStarted()) in ```main.ts```, create and use some classes
+- in ```/src``` folder add engine events like ```OnGameModeStarted()``` in ```main.ts```, create and use some classes
 
 - ```npm run build``` or ```npm run watch```
 
@@ -20,16 +20,17 @@
 ### Build merged.ts
 ```npm run build```
 
-### Rebuild merged.ts on files change
+### Rebuild ```merged.ts``` on files change
 ```npm run watch```
 
-### Update /code/mod/index.d.ts and /code/modlib/index.ts
+### Update ```/code/mod/index.d.ts``` and ```/code/modlib/index.ts```
 ```npm run update-sdk```
 
 ## NOTES ##
 
 ### /code ###
-- Contains Official Portal SDK ```/mod/index.d.ts``` and ```/modlib/index.ts``` files provided by [Battlefield Portal Community](https://github.com/battlefield-portal-community/OfficailPortalSDK)  
+- Contains Official Portal SDK ```/mod/index.d.ts``` and ```/modlib/index.ts``` files provided by [Battlefield Portal Community](https://github.com/battlefield-portal-community/OfficailPortalSDK)
+  
 - Files are updated automatically on ```npm install```  
 
 - To update manually use ```npm run update-sdk```
@@ -37,7 +38,7 @@
 ### /scripts ### 
 - Merge script  
 
-- Script to update SDK files in /code folder 
+- Script to update SDK files in ```/code``` folder 
 
 ### /src ### 
 - Entry point file ```main.ts``` should contain SDK events
