@@ -4,7 +4,7 @@
 
 - ```npm install```
 
-- in ```/src``` folder add engine events like ```OnGameModeStarted()``` in ```main.ts```, create and use some classes
+- in ```/src``` folder in ```main.ts``` add engine events like ```OnGameModeStarted()```, create and use some classes
 
 - ```npm run build``` or ```npm run watch```
 
