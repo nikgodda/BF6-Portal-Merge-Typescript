@@ -42,6 +42,6 @@
 ### /src ### 
 - Entry point file ```main.ts``` should contain SDK events
 
-- Example
+- Example classes
 
 - ```import * as modlib from 'modlib'``` to use modlib in classes or main.ts
